@@ -1,12 +1,18 @@
 # Artscore Studio User Bundle
 
-Artscore Studio User Bundle is a Symfony 2 bundle for create and manage users in your Symfony 2 application.
-This package is a part of Artscore Studio Framework.
+User Bundle is a Symfony 2+ bundle for create and manager users in Symfony application. This package is a part of Artscore Studio Framework.
+
+IMPORTANT NOTICE: This bundle is still under development. Any changes will be done without prior notice to consumers of this package. Of course this code will become stable at a certain point, but for now, use at your own risk.
 
 ## Prerequisites
-This version of the bundle requires Symfony >=2.0, [FOSUserBundle](https://github.com/FriendsOfSymfony/FOSUserBundle) ~2.0@dev and [artscorestudio/application-bundle](https://github.com/artscorestudio/application-bundle).
+
+This version of the bundle requires :
+* Symfony >=2.0, 
+* [FOSUserBundle](https://github.com/FriendsOfSymfony/FOSUserBundle) ~2.0@dev,
+* [artscorestudio/core-bundle](https://github.com/artscorestudio/core-bundle).
 
 ## Translations
+
 If you wish to use default texts provided in this bundle, you have to make sure you have translator enabled in your config.
 
 ```yaml
@@ -18,39 +24,41 @@ For more information about translations, check [Symfony documentation](http://sy
 
 ## Installation
 
-### Download the bundle via Composer
+### Step 1 : Download ASFLayoutBundle using composer
 
-Add UserBundle by running the command :
+Require the bundle with composer :
+
 ```bash
 $ composer require artscorestudio/user-bundle "dev-master"
 ```
 
-Composer will install the bundle to your project's vendor/artscorestudio directory.
+Composer will install the bundle to your project's *vendor/artscorestudio/user-bundle* directory. It also install dependencies. 
 
-### Enable the bundle in your porject
+### Step 2 : Enable the bundle
 
 Enable the bundle in the kernel :
+
 ```php
-<?php
 // app/AppKernel.php
 
 public function registerBundles()
 {
-    $bundles = array(
-        new Asf\Bundle\UserBundle\AsfUserBundle(),
-    );
+	$bundles = array(
+		// ...
+		new ASF\UserBundle\ASFUserBundle()
+		// ...
+	);
 }
 ```
 
-## Update your schema
+### Step 3 : Update your schema
 
 If you are using Doctrine, update your schema by running the command :
 ```bash
 $ php app/console doctrine:schema:update --force
 ```
 
-## Update application configuration
-
+### Step 4 : Update application configuration
 
 For use UserBundle, you must add this lines in your application's configuration according to the [FOSUserBundle Installation instruction](https://github.com/FriendsOfSymfony/FOSUserBundle/blob/master/Resources/doc/index.md).
 
@@ -61,10 +69,10 @@ For use UserBundle, you must add this lines in your application's configuration 
 fos_user:
     db_driver: orm
     firewall_name: main
-    user_class: Asf\Bundle\UserBundle\Entity\User
+    user_class: ASF\UserBundle\Entity\User
 ```
 
-### Create first user
+### Step 5 : Create first user
 
 Create your first user by running the FOSUserBundle command line tool :
 ```bash
@@ -76,42 +84,10 @@ And promote it :
 php app/console fos:user:promote admin ROLE_ADMIN
 ```
 
-## User Manager
+### Next Steps
 
-The UserBundle provide a User entity manager called **asf_user.user.manager**. This entity manager allows you to centralize all actions on User entity.
+Now you have completed the basic installation and configuration of the ASFLayoutBundle, you are ready to learn about more advanced features and usages of the bundle.
 
-Create a new instance of user :
-```php
-// Acme\DemoBundle\Controller\AcmeDemoController
-
-class AcmeDemoController extends Controller
-{
-    public function indexAction()
-    {
-        $user = $this->get('asf_user.user.manager')->createInstance();
-    }
-}
-```
-
-By using the entity manager for create your User, you can catch a specific event called **asf.user.create**.
-
-## Use e-mail instead of the username for authentication
-
-If you want to use e-mail instead of username for authentication, override default User bundle configuration :
-
-```yaml
-# app/config/config.yml
-asf_user:
-    email_as_username: true
-```
-
-You must then specify to FOSUserBundle the attribute for authentication :
-
-```yaml
-# app/config/security.yml
-security:
-    providers:
-        fos_userbundle:
-            id: fos_user.user_provider.username_email
-```
-
+The following documents are available :
+* [User Entity Manager](user-manager.md)
+* [ASFUserBundle Configuration Reference](configuration.md)
