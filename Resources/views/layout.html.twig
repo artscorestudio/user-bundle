@@ -1,0 +1,29 @@
+{% extends 'ASFLayout::frontend_model.html.twig' %}
+
+{% block asf_base_meta_title %}{{ 'Authentication'|trans }}{% endblock %}
+
+{% block navbar %}{% endblock %}
+
+{% block asf_base_body %}
+	
+	<div class="container">
+		{% block page_title_container %}
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<h1 class="text-center">{% block page_title %}{{ 'Authentication'|trans }}{% endblock %}</h1>
+					</div>
+				</div>
+			</div>
+		{% endblock page_title_container %}
+		
+		{% block flash_messages %}
+		{{ parent() }}
+		{% endblock %}
+		
+		{% block page_content %}
+			{% block fos_user_content %}{% endblock %}
+		{% endblock page_content %}
+	</div>
+	
+{% endblock asf_base_body %}

@@ -1,0 +1,9 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block asf_base_meta_title %}{{ 'Registration'|trans }}{% endblock %}
+
+{% block page_title %}{{ 'Artscore Studio Website Registration'|trans }}{% endblock page_title %}
+
+{% block fos_user_content %}
+{% include "FOSUserBundle:Registration:register_content.html.twig" %}
+{% endblock fos_user_content %}
