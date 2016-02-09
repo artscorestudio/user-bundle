@@ -1,4 +1,4 @@
-# Artscore Studio Layout bundle
+# Artscore Studio User bundle
 
 User Bundle is a Symfony 3 bundle for create and manager users in Symfony3 application. This package is a part of Artscore Studio Framework.
 
