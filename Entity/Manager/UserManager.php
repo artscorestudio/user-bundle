@@ -9,7 +9,7 @@
  */
 namespace ASF\UserBundle\Entity\Manager;
 
-use ASF\CoreBundle\Application\ASFEntityManager;
+use ASF\CoreBundle\Entity\Manager\ASFEntityManager;
 use ASF\UserBundle\Event\UserEvent;
 use ASF\UserBundle\Event\UserEvents;
 
