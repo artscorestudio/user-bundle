@@ -18,8 +18,7 @@
     <services>
         <!-- Entity Manager -->
         <service id="asf_user.user.manager" class="%asf_user.user.manager.class%">
-            <argument type="service" id="service_container" />
-            <argument>%asf_user.user.manager.entity.class%</argument>
+            <tag name="asf_core.manager" entity="%asf_user.user.manager.entity.class%" />
         </service>
         
         <!-- Forms -->
