@@ -1,6 +1,6 @@
 # Artscore Studio User Bundle
 
-User Bundle is a Symfony 2+ bundle for create and manager users in Symfony application. This package is a part of Artscore Studio Framework.
+User Bundle is a Symfony 2+ bundle for create and manager users in Symfony application. This bundle is an "abstract" bundle who centralize commons features around user entity managment additionnal to the FOSUserBundle for a better and faster integration in Artscore Studio Framework. So, this bundle is not for a generic use (like components) but for my own needs. This package is a part of Artscore Studio Framework.
 
 IMPORTANT NOTICE: This bundle is still under development. Any changes will be done without prior notice to consumers of this package. Of course this code will become stable at a certain point, but for now, use at your own risk.
 
@@ -24,7 +24,7 @@ For more information about translations, check [Symfony documentation](http://sy
 
 ## Installation
 
-### Step 1 : Download ASFLayoutBundle using composer
+### Step 1 : Download ASFUserBundle using composer
 
 Require the bundle with composer :
 
@@ -51,7 +51,35 @@ public function registerBundles()
 }
 ```
 
-### Step 3 : Update your schema
+### Step 3 : Create your own user bundle
+
+ASFUserBundle is an abstract bundle. You must create your own user bundle for persist entities. So, create your bundle and your User entity. See below for exemple :
+
+```php
+// app/src/Acme/DemoBundle/entity/User.php
+namespace Acme\DemoBundle\Entity;
+
+use ASF\UserBUndle\Entity\User as BaseUser;
+
+class User extends BaseUser {}
+```
+
+A Doctrine ORM mapping file in xml is available in the bundle under *Resources/config/dcotrine-mapping* folder
+
+```xml
+<!-- @AcmeDemoBundle/Resources/config/doctrine/User.orm.xml -->
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+	http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+	<entity name="Acme\DemoBundle\Entity\User" table="acme_demo_user">
+		<id name="id" type="integer" column="id">
+			<generator strategy="AUTO" />
+		</id>
+	</entity>
+</doctrine-mapping>
+```
 
 If you are using Doctrine, update your schema by running the command :
 ```bash
