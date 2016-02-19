@@ -17,14 +17,4 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  * @author Nicolas Claverie <info@artscore-studio.fr>
  *
  */
-class ASFUserBundle extends Bundle
-{
-    /**
-     * {@inheritDoc}
-     * @see \Symfony\Component\HttpKernel\Bundle\Bundle::getParent()
-     */
-    public function getParent()
-    {
-        return 'FOSUserBundle';
-    }
-}
+class ASFUserBundle extends Bundle {}
