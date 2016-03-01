@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+	<parameters>
+    	<!-- User Manager -->
+		<parameter key="asf_user.user.manager.class">ASF\UserBundle\Entity\Manager\UserManager</parameter>
+		<parameter key="asf_user.user.manager.entity.class">ASF\UserBundle\Entity\User</parameter>
+    </parameters>
+
+    <services>
+        <!-- Entity Manager -->
+        <service id="asf_user.user.manager" class="%asf_user.user.manager.class%">
+            <tag name="asf_core.manager" entity="%asf_user.user.manager.entity.class%" />
+        </service>
+    </services>
+    
+</container>
