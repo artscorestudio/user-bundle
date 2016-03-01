@@ -1,0 +1,5 @@
+asf_user_ajax_request_user_by_username:
+    path: /ajax/request/search/by/username
+    defaults: { _controller: "ASFUserBundle:AjaxRequest:byUsername" }
+    options:
+        expose: true
