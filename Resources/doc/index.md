@@ -119,3 +119,4 @@ Now you have completed the basic installation and configuration of the ASFLayout
 The following documents are available :
 * [User Entity Manager](user-manager.md)
 * [ASFUserBundle Configuration Reference](configuration.md)
+* [Form Types](form-types.md)
