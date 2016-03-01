@@ -46,6 +46,14 @@ class ASFUserExtensionTest extends \PHPUnit_Framework_TestCase
 	}
 	
 	/**
+	 * @covers ASF\LayoutBundle\DependencyInjection\ASFLayoutExtension::prepend
+	 */
+	public function testPrependExtension()
+	{
+	    $this->extension->prepend($this->getContainer());
+	}
+	
+	/**
 	 * Return a mock object of ContainerBuilder
 	 * 
 	 * @return \Symfony\Component\DependencyInjection\ContainerBuilder
@@ -57,7 +65,6 @@ class ASFUserExtensionTest extends \PHPUnit_Framework_TestCase
 	    
 	    if ( is_null($bundles) ) {
     	    $bundles = $bundles = array(
-    	        'AsseticBundle' => 'Symfony\Bundle\AsseticBundle\AsseticBundle',
     	        'TwigBundle' => 'Symfony\Bundle\TwigBundle\TwigBundle',
     	        'FOSJsRoutingBundle' => 'FOS\JsRoutingBundle\FOSJsRoutingBundle'
     	    );
@@ -65,7 +72,6 @@ class ASFUserExtensionTest extends \PHPUnit_Framework_TestCase
 	    
 	    if ( is_null($extensions) ) {
     	    $extensions = array(
-    	        'assetic' => array(),
     	        'twig' => array()
     	    );
 	    }
@@ -95,7 +101,7 @@ class ASFUserExtensionTest extends \PHPUnit_Framework_TestCase
 	protected function getDefaultConfig()
 	{
 	    return array(
-	        
+	        'form_theme' => 'ASFUserBundle:Form:fields.html.twig'
 	    );
 	}
 }
