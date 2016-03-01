@@ -11,9 +11,12 @@ namespace ASF\UserBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use Asf\Bundle\ContactBundle\Form\DataTransformer\StringToUserTransformer;
-use ASF\UserBundle\Entity\Manager\UserManager;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+
+use ASF\UserBundle\Form\DataTransformer\StringToUserTransformer;
+use ASF\CoreBundle\Model\Manager\ASFEntityManagerInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use ASF\UserBundle\Entity\Manager\UserManagerInterface;
 
 /**
  * Field for searching user account
@@ -21,17 +24,17 @@ use ASF\UserBundle\Entity\Manager\UserManager;
  * @author Nicolas Claverie qinfo@artscore-studio.fr>
  *
  */
-class SearchUserFormType extends AbstractType
+class SearchUserType extends AbstractType
 {
 	/**
-	 * @var UserManager
+	 * @var UserManagerInterface|ASFEntityManagerInterface
 	 */
 	protected $userManager;
 	
 	/**
-	 * @param UserManager $user_manager
+	 * @param UserManagerInterface $user_manager
 	 */
-	public function __construct($user_manager)
+	public function __construct(UserManagerInterface $user_manager)
 	{
 		$this->userManager = $user_manager;
 	}
@@ -46,15 +49,19 @@ class SearchUserFormType extends AbstractType
 		$builder->addModelTransformer($user_transformer);
 	}
 
-	/* (non-PHPdoc)
-	 * @see \Symfony\Component\Form\AbstractType::setDefaultOptions()
+	/**
+	 * {@inheritDoc}
+	 * @see \Symfony\Component\Form\AbstractType::configureOptions()
 	 */
-	public function setDefaultOptions(OptionsResolverInterface $resolver)
+	public function configureOptions(OptionsResolver $resolver)
 	{
 		$resolver->setDefaults(array(
-			'class' => $this->userManager->getClassName()
+		    'label' => 'User',
+			'class' => $this->userManager->getClassName(),
+		    'choice_label' => 'username',
+		    'placeholder' => 'Choose a user',
+		    'attr' => array('class' => 'select2-entity-ajax', 'data-route' => 'asf_user_ajax_request_user_by_username')
 		));
-
 	}
 	
 	/**
@@ -63,11 +70,15 @@ class SearchUserFormType extends AbstractType
 	 */
 	public function getName()
 	{
-		return 'asf_user_search_user';
+		return 'search_user';
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 * @see \Symfony\Component\Form\AbstractType::getParent()
+	 */
 	public function getParent()
 	{
-		return 'genemu_jqueryautocomplete_entity';
+		return EntityType::class;
 	}
 }
