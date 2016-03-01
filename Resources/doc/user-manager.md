@@ -8,7 +8,7 @@ The User Entity Manager provides by this bundle is based on ASFCoreBundle Entity
 $ composer require artscorestudio/core-bundle
 ```
 
-## Configure UserBundle for use User Entity Manager
+## Configure UserBundle for use embedded User Entity Manager
 
 Enable ASFCoreBundle support in UserBundle like this :
 
@@ -98,3 +98,32 @@ class AcmeDemoController extends Controller
 One of the advantage of this mechanism, is you can centralize the creation, deletion, etc... of an entity.
 
 For more advanced explanations on Entity Manager, please read the documentation of [ASFCoreBundle : The embedded entity manager](https://github.com/artscorestudio/core-bundle/blob/master/Resources/doc/entity-manager.md).
+
+## How to use UserBundle without embedded Entity Manager
+
+If you can not use the entity manager included in this bundle, you can create an entity manager that do not depend on ASFCoreBundle. To do this, create your own entity manager and let him implement the interface ASFUserManagerInterface in this bundle.
+
+```php
+<?php
+namespace Acme\DemoBundle\Entity\Manager;
+
+use ASF\UserBundle\Entity\Manager\ASFUserManagerInterface;
+
+class MyUserEntitiManager implements ASFUserManagerInterface
+{
+	/**
+	 * Must return the name of the entity
+	 */
+	public function getClassName()
+	{
+	    // [...]
+	}
+	
+	/**
+	 * Must return the entity repository
+	 */
+	public function getRepository()
+	{
+	    // [...]
+	}
+}
