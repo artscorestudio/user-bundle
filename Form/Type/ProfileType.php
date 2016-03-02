@@ -14,12 +14,12 @@ use Symfony\Component\Form\AbstractType;
 use ASF\UserBundle\Entity\Manager\UserManager;
 
 /**
- * Registration Form Type
+ * Profile Form Type
  *
  * @author Nicolas Claverie <info@artscore-studio.fr>
  *
  */
-class RegistrationFormType extends AbstractType
+class ProfileType extends AbstractType
 {
 	/**
 	 * @var UserManager
@@ -36,20 +36,20 @@ class RegistrationFormType extends AbstractType
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see \FOS\UserBundle\Form\Type\RegistrationFormType::buildForm()
+	 * @see \FOS\UserBundle\Form\Type\ProfileType::buildForm()
 	 */
 	public function buildForm(FormBuilderInterface $builder, array $options)
 	{
-		$builder->remove('email');
+		$builder->remove('email')->remove('current_password');
 	}
 	
 	/**
-	 * (non-PHPdoc)
-	 * @see \FOS\UserBundle\Form\Type\RegistrationFormType::getName()
-	 */
+	* (non-PHPdoc)
+	* @see \FOS\UserBundle\Form\Type\ProfileType::getName()
+	*/
 	public function getName()
 	{
-		return $this->userManager->getRegistrationFormTypeServiceName();
+		return $this->userManager->getProfileFormTypeServiceName();
 	}
 	
 	/**
@@ -58,6 +58,6 @@ class RegistrationFormType extends AbstractType
 	 */
 	public function getParent()
 	{
-		return 'fos_user_registration';
+		return 'fos_user_profile';
 	}
 }
