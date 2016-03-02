@@ -38,7 +38,7 @@ class ASFUserExtensionTest extends \PHPUnit_Framework_TestCase
 	}
 	
 	/**
-	 * Test the load method in bundle's extension
+	 * @covers ASF\UserBundle\DependencyInjection\ASFUserExtension::load
 	 */
 	public function testLoadExtension()
 	{
@@ -46,7 +46,7 @@ class ASFUserExtensionTest extends \PHPUnit_Framework_TestCase
 	}
 	
 	/**
-	 * @covers ASF\LayoutBundle\DependencyInjection\ASFLayoutExtension::prepend
+	 * @covers ASF\UserBundle\DependencyInjection\ASFUserExtension::prepend
 	 */
 	public function testPrependExtension()
 	{

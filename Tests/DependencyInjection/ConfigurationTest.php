@@ -21,7 +21,7 @@ use ASF\UserBundle\DependencyInjection\Configuration;
 class ConfigurationTest extends \PHPUnit_Framework_TestCase
 {	
     /**
-     * @covers ASF\LayoutBundle\DependencyInjection\Configuration
+     * @covers ASF\UserBundle\DependencyInjection\Configuration
      */
     public function testEnableASFCoreSupportParameterInDefaultConfiguration()
     {
@@ -31,7 +31,7 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
     }
     
     /**
-     * @covers ASF\LayoutBundle\DependencyInjection\Configuration
+     * @covers ASF\UserBundle\DependencyInjection\Configuration
      */
     public function testSelect2SupportParameterInDefaultConfiguration()
     {
@@ -41,7 +41,7 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
     }
     
     /**
-     * @covers ASF\LayoutBundle\DependencyInjection\Configuration
+     * @covers ASF\UserBundle\DependencyInjection\Configuration
      */
     public function testTwigFormThemeParameterInDefaultConfiguration()
     {
