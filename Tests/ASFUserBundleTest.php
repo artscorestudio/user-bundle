@@ -20,7 +20,7 @@ use ASF\UserBundle\ASFUserBundle;
 class ASFUserBundleTest extends \PHPUnit_Framework_TestCase
 {
 	/**
-	 * @cover \ASF\UserBundle\ASFUserBundle
+	 * @covers \ASF\UserBundle\ASFUserBundle
 	 */
 	public function testBuild()
 	{

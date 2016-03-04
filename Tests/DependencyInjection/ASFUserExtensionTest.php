@@ -12,6 +12,7 @@ namespace ASF\UserBundle\Tests\DependencyInjection;
 use \Mockery as m; 
 use ASF\UserBundle\DependencyInjection\ASFUserExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 /**
  * Bundle's Extension Test Suites
@@ -19,12 +20,17 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
  * @author Nicolas Claverie <info@artscore-studio.fr>
  *
  */
-class ASFUserExtensionTest extends \PHPUnit_Framework_TestCase
+class ASFUserExtensionTest extends KernelTestCase
 {
 	/**
 	 * @var \ASF\UserBundle\DependencyInjection\ASFUserExtension
 	 */
 	protected $extension;
+	
+	/**
+	 * @var ContainerBuilder
+	 */
+	protected $container;
 	
 	/**
 	 * {@inheritDoc}
@@ -34,6 +40,10 @@ class ASFUserExtensionTest extends \PHPUnit_Framework_TestCase
 	{
 		parent::setUp();
 
+		static::$kernel = static::createKernel();
+		static::$kernel->boot();
+		
+		$this->container = static::$kernel->getContainer();
 		$this->extension = new ASFUserExtension();
 	}
 	
@@ -58,9 +68,8 @@ class ASFUserExtensionTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testConfigureTwigBundleMethod()
 	{
-	    $container = $this->getContainer();
 	    $configure_twig = self::getMethod('configureTwigBundle');
-	    $configure_twig->invokeArgs($container, $this->getDefaultConfig());
+	    $configure_twig->invokeArgs($this->extension, array($this->container, $this->getDefaultConfig()));
 	    $twig_config = $container->getParameter('twig.form_theme');
 	    
         $this->assertCount(1, $twig_config);

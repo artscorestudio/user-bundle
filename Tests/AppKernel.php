@@ -26,6 +26,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new Hautelook\AliceBundle\HautelookAliceBundle(),
             
         	new ASF\CoreBundle\ASFCoreBundle(),
         	new ASF\LayoutBundle\ASFLayoutBundle(),
