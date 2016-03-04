@@ -1,15 +1,16 @@
 # Artscore Studio User Bundle
 
-User Bundle is a Symfony 2+ bundle for create and manager users in Symfony application. This bundle is an "abstract" bundle who centralize commons features around user entity managment additionnal to the FOSUserBundle for a better and faster integration in Artscore Studio Framework. So, this bundle is not for a generic use (like components) but for my own needs. This package is a part of Artscore Studio Framework.
+User Bundle is a Symfony 2/3 bundle for create and manage users in Symfony 2/3 application. This bundle is an "abstract" bundle who centralize commons features around user entity managment additionnal to the FOSUserBundle for a better and faster integration in Artscore Studio Framework. So, this bundle is not for a generic use (like components) but for my own needs. This package is a part of Artscore Studio Framework.
 
-IMPORTANT NOTICE: This bundle is still under development. Any changes will be done without prior notice to consumers of this package. Of course this code will become stable at a certain point, but for now, use at your own risk.
+> IMPORTANT NOTICE: This bundle is still under development. Any changes will be done without prior notice to consumers of this package. Of course this code will become stable at a certain point, but for now, use at your own risk.
 
 ## Prerequisites
 
 This version of the bundle requires :
-* Symfony >=2.0, 
-* [FOSUserBundle](https://github.com/FriendsOfSymfony/FOSUserBundle) ~2.0@dev,
-* [artscorestudio/core-bundle](https://github.com/artscorestudio/core-bundle).
+
+* Symfony >=2.8 / >= 3, 
+* [FOSUserBundle >= 2.0](https://packagist.org/packages/friendsofsymfony/user-bundle)
+* [ASFCoreBundle >= 1.0.0](https://packagist.org/packages/artscorestudio/core-bundle)
 
 ## Translations
 
@@ -73,11 +74,13 @@ A Doctrine ORM mapping file in xml is available in the bundle under *Resources/c
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
 	http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+	
 	<entity name="Acme\DemoBundle\Entity\User" table="acme_demo_user">
 		<id name="id" type="integer" column="id">
 			<generator strategy="AUTO" />
 		</id>
 	</entity>
+	
 </doctrine-mapping>
 ```
 
@@ -97,7 +100,7 @@ For use UserBundle, you must add this lines in your application's configuration 
 fos_user:
     db_driver: orm
     firewall_name: main
-    user_class: ASF\UserBundle\Entity\User
+    user_class: "Acme\UserBundle\Entity\User"
 ```
 
 ### Step 5 : Create first user

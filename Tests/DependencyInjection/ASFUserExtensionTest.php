@@ -40,7 +40,7 @@ class ASFUserExtensionTest extends \PHPUnit_Framework_TestCase
 	/**
 	 * @covers ASF\UserBundle\DependencyInjection\ASFUserExtension::load
 	 */
-	public function testLoadExtension()
+	public function testLoadMethod()
 	{
 		$this->extension->load(array(), $this->getContainer());
 	}
@@ -48,9 +48,22 @@ class ASFUserExtensionTest extends \PHPUnit_Framework_TestCase
 	/**
 	 * @covers ASF\UserBundle\DependencyInjection\ASFUserExtension::prepend
 	 */
-	public function testPrependExtension()
+	public function testPrependMethod()
 	{
 	    $this->extension->prepend($this->getContainer());
+	}
+	
+	/**
+	 * @covers ASF\UserBundle\DependencyInjection\ASFUserExtension::configureTwigBundle
+	 */
+	public function testConfigureTwigBundleMethod()
+	{
+	    $container = $this->getContainer();
+	    $configure_twig = self::getMethod('configureTwigBundle');
+	    $configure_twig->invokeArgs($container, $this->getDefaultConfig());
+	    $twig_config = $container->getParameter('twig.form_theme');
+	    
+        $this->assertCount(1, $twig_config);
 	}
 	
 	/**
@@ -65,14 +78,13 @@ class ASFUserExtensionTest extends \PHPUnit_Framework_TestCase
 	    
 	    if ( is_null($bundles) ) {
     	    $bundles = $bundles = array(
-    	        'TwigBundle' => 'Symfony\Bundle\TwigBundle\TwigBundle',
-    	        'FOSJsRoutingBundle' => 'FOS\JsRoutingBundle\FOSJsRoutingBundle'
+    	        'TwigBundle' => 'Symfony\Bundle\TwigBundle\TwigBundle'
     	    );
 	    }
 	    
 	    if ( is_null($extensions) ) {
     	    $extensions = array(
-    	        'twig' => array()
+    	        'twig' => array('form_theme' => array())
     	    );
 	    }
 	    
@@ -103,5 +115,18 @@ class ASFUserExtensionTest extends \PHPUnit_Framework_TestCase
 	    return array(
 	        'form_theme' => 'ASFUserBundle:Form:fields.html.twig'
 	    );
+	}
+	
+	/**
+	 * Access to protected methods
+	 *
+	 * @param string $name
+	 */
+	protected static function getMethod($name)
+	{
+	    $class = new \ReflectionClass('ASF\UserBundle\DependencyInjection\ASFUserExtension');
+	    $method = $class->getMethod($name);
+	    $method->setAccessible(true);
+	    return $method;
 	}
 }

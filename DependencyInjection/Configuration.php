@@ -2,7 +2,7 @@
 /*
  * This file is part of the Artscore Studio Framework package.
  *
- * (c) 2012-2015 Nicolas Claverie <info@artscore-studio.fr>
+ * (c) Nicolas Claverie <info@artscore-studio.fr>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -32,12 +32,6 @@ class Configuration implements ConfigurationInterface
         // more information on that topic.
         $rootNode
             ->children()
-                ->booleanNode('enable_core_support')
-                    ->defaultFalse()
-                ->end()
-                ->booleanNode('enable_select2_support')
-                    ->defaultFalse()
-                ->end()
                 ->scalarNode('form_theme')
                     ->defaultValue('ASFUserBundle:Form:fields.html.twig')
                 ->end()

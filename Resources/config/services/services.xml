@@ -5,7 +5,11 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
 	<parameters>
-	
+		
+		<!-- User Manager -->
+		<parameter key="asf_user.user.manager.class">ASF\UserBundle\Entity\Manager\UserManager</parameter>
+		<parameter key="asf_user.user.manager.entity.class">ASF\UserBundle\Entity\User</parameter>
+		
 		<!-- Forms -->
 		<parameter key="asf_user.form.type.registration.class">ASF\UserBundle\Form\Type\RegistrationFormType</parameter>
 		<parameter key="asf_user.form.type.profile.class">ASF\UserBundle\Form\Type\ProfileFormType</parameter>
@@ -14,7 +18,12 @@
     </parameters>
 
     <services>
-       
+		
+		<!-- Entity Manager -->
+        <service id="asf_user.user.manager" class="%asf_user.user.manager.class%">
+            <tag name="asf_core.manager" entity="%asf_user.user.manager.entity.class%" />
+        </service>
+        
         <!-- Forms -->
         <service id="asf_user.form.type.registration" class="%asf_user.form.type.registration.class%">
         	<argument type="service" id="asf_user.user.manager" />

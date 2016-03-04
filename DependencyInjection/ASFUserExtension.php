@@ -1,11 +1,11 @@
 <?php
-/**
- * This file is part of Artscore Studio Framework Package
+/*
+ * This file is part of the Artscore Studio Framework package.
  *
- * (c) 2012-2015 Artscore Studio <info@artscore-studio.fr>
+ * (c) Nicolas Claverie <info@artscore-studio.fr>
  *
- * This source file is subject to the MIT Licence that is bundled
- * with this source code in the file LICENSE.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 namespace ASF\UserBundle\DependencyInjection;
 
@@ -32,10 +32,6 @@ class ASFUserExtension extends Extension implements PrependExtensionInterface
 	    
 	    $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
 	    $loader->load('services/services.xml');
-	    
-	    if ( isset($config['enable_core_support']) && $config['enable_core_support'] === true ) {
-	        $loader->load('services/asf_core_enabled.xml');
-	    }
     }
     
     /**
@@ -49,11 +45,7 @@ class ASFUserExtension extends Extension implements PrependExtensionInterface
         $configs = $container->getExtensionConfig($this->getAlias());
         $config = $this->processConfiguration(new Configuration(), $configs);
     
-        if ( $config['enable_select2_support'] == true )
-            $this->configureTwigBundle($container, $config);
-        
-        if ( !array_key_exists('ASFCoreBundle', $bundles) && $config['enable_core_support'] == true )
-            throw new InvalidConfigurationException('You have enabled the support of ASFCoreBundle but it is not enabled. Install it or disable ASFCoreBundle support in ASFUserBundle.');
+        $this->configureTwigBundle($container, $config);
     }
     
     /**

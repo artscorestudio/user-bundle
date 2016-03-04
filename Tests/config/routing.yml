@@ -1,0 +1,5 @@
+asf_user:
+    resource: "@ASFUserBundle/Resources/config/routing/routing.yml"
+    
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
