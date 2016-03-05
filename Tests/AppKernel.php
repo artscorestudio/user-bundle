@@ -21,12 +21,12 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
         	new Symfony\Bundle\AsseticBundle\AsseticBundle(),
-            
+        	new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
+        	
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new FOS\UserBundle\FOSUserBundle(),
-            new Hautelook\AliceBundle\HautelookAliceBundle(),
             
         	new ASF\CoreBundle\ASFCoreBundle(),
         	new ASF\LayoutBundle\ASFLayoutBundle(),

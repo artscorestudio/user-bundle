@@ -56,7 +56,7 @@ class ASFUserExtension extends Extension implements PrependExtensionInterface
 	 */
 	protected function configureTwigBundle(ContainerBuilder $container, array $config)
 	{
-	    foreach(array_keys($container->getExtensions()) as $name) {
+		foreach(array_keys($container->getExtensions()) as $name) {
 	        switch($name) {
 	            case 'twig':
                     $container->prependExtensionConfig($name, array(

@@ -11,8 +11,8 @@ namespace ASF\UserBundle\Tests\DependencyInjection;
 
 use \Mockery as m; 
 use ASF\UserBundle\DependencyInjection\ASFUserExtension;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
+use Symfony\Bundle\TwigBundle\DependencyInjection\TwigExtension;
 
 /**
  * Bundle's Extension Test Suites
@@ -38,12 +38,6 @@ class ASFUserExtensionTest extends KernelTestCase
 	 */
 	public function setUp()
 	{
-		parent::setUp();
-
-		static::$kernel = static::createKernel();
-		static::$kernel->boot();
-		
-		$this->container = static::$kernel->getContainer();
 		$this->extension = new ASFUserExtension();
 	}
 	
@@ -57,22 +51,11 @@ class ASFUserExtensionTest extends KernelTestCase
 	
 	/**
 	 * @covers ASF\UserBundle\DependencyInjection\ASFUserExtension::prepend
+	 * @covers ASF\UserBundle\DependencyInjection\ASFUserExtension::configureTwigBundle
 	 */
 	public function testPrependMethod()
 	{
 	    $this->extension->prepend($this->getContainer());
-	}
-	
-	/**
-	 * @covers ASF\UserBundle\DependencyInjection\ASFUserExtension::configureTwigBundle
-	 */
-	public function testConfigureTwigBundleMethod()
-	{
-	    $configure_twig = self::getMethod('configureTwigBundle');
-	    $configure_twig->invokeArgs($this->extension, array($this->container, $this->getDefaultConfig()));
-	    $twig_config = $container->getParameter('twig.form_theme');
-	    
-        $this->assertCount(1, $twig_config);
 	}
 	
 	/**
@@ -93,7 +76,7 @@ class ASFUserExtensionTest extends KernelTestCase
 	    
 	    if ( is_null($extensions) ) {
     	    $extensions = array(
-    	        'twig' => array('form_theme' => array())
+    	        'twig' => new TwigExtension()
     	    );
 	    }
 	    
@@ -124,18 +107,5 @@ class ASFUserExtensionTest extends KernelTestCase
 	    return array(
 	        'form_theme' => 'ASFUserBundle:Form:fields.html.twig'
 	    );
-	}
-	
-	/**
-	 * Access to protected methods
-	 *
-	 * @param string $name
-	 */
-	protected static function getMethod($name)
-	{
-	    $class = new \ReflectionClass('ASF\UserBundle\DependencyInjection\ASFUserExtension');
-	    $method = $class->getMethod($name);
-	    $method->setAccessible(true);
-	    return $method;
 	}
 }
