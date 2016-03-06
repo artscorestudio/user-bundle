@@ -29,7 +29,7 @@
 		"twig/twig": "~1.10",
 		"symfony/swiftmailer-bundle": "^2.3",
 		"artscorestudio/core-bundle": "1.0.3",
-		"artscorestudio/layout-bundle": "dev-master"
+		"artscorestudio/layout-bundle": "1.0.0"
 	},
 	"require-dev" : {
         "swiftmailer/swiftmailer": "~4.3|~5",
