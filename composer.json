@@ -32,11 +32,8 @@
 		"artscorestudio/layout-bundle": "1.0.0"
 	},
 	"require-dev" : {
-        "swiftmailer/swiftmailer": "~4.3|~5",
-        "symfony/console": "~2.3|~3.0",
         "symfony/phpunit-bridge": "~2.7|~3.0",
         "symfony/validator": "~2.3|~3.0",
-        "symfony/yaml": "~2.3|~3.0",
         "nelmio/alice": "^2.1",
         "mockery/mockery": "0.9.*",
         "friendsofsymfony/jsrouting-bundle": ">=2.0",
