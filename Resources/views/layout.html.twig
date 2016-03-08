@@ -1,8 +1,8 @@
-{% extends '::base.html.twig' %}
+{% extends 'ASFLayoutBundle::frontend_model.html.twig' %}
 
 {% block asf_base_meta_title %}{{ 'Authentication'|trans }}{% endblock %}
 
-{% block body %}
+{% block asf_base_body %}
 	
 	<div class="container">
 		{% block page_title_container %}
@@ -19,9 +19,9 @@
 		{{ parent() }}
 		{% endblock %}
 		
-		{% block page_content %}
+		{% block content %}
 			{% block fos_user_content %}{% endblock %}
-		{% endblock page_content %}
+		{% endblock content %}
 	</div>
 	
 {% endblock %}

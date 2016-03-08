@@ -1,10 +1,14 @@
 # Artscore Studio User bundle
 
-User Bundle is a Symfony 2/3 bundle for create and manage users in Symfony 2/3 application. This package is a part of Artscore Studio Framework.
+User Bundle is a Symfony 2/3 bundle for create and manage user account in Symfony 2/3 application. This package is a part of Artscore Studio Framework.
 
-IMPORTANT NOTICE: This bundle is still under development. Any changes will be done without prior notice to consumers of this package. Of course this code will become stable at a certain point, but for now, use at your own risk.
+> This bundle is a bundle that can be used only in the Artscore Studio Framework. It is not for a standalone use.
 
-[![Build Status](https://travis-ci.org/artscorestudio/user-bundle.svg?branch=master)](https://travis-ci.org/artscorestudio/user-bundle)
+> IMPORTANT NOTICE: This bundle is still under development. Any changes will be done without prior notice to consumers of this package. Of course this code will become stable at a certain point, but for now, use at your own risk.
+
+| [Master](https://github.com/artscorestudio/user-bundle) | [Latest Release (1.0.0)](https://github.com/artscorestudio/user-bundle/releases/tag/1.0.0) |
+| ------ | -------------- |
+| [![Build Status](https://travis-ci.org/artscorestudio/user-bundle.svg?branch=master)](https://travis-ci.org/artscorestudio/user-bundle) | [![Build Status](https://travis-ci.org/artscorestudio/user-bundle.svg?branch=1.0.0)](https://travis-ci.org/artscorestudio/user-bundle) |
 
 ## Documentation
 
