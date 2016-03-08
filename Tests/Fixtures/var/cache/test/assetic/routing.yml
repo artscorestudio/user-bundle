@@ -1,5 +1,0 @@
-_assetic:
-    resource: .
-    type: assetic
-_app:
-    resource: /Library/WebServer/Documents/framework.local/vendor/artscorestudio/user-bundle/Tests/config/routing.yml
