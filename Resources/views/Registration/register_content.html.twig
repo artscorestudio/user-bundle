@@ -3,14 +3,14 @@
 <div class="container">
 	<div class="row">
 		<div class=" col-xs-offset-3 col-xs-6">
-			<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
-			    {{ form_widget(form) }}
-			    <div class="form-group">
-					<div class="col-sm-offset-4 col-sm-8 col-xs-12">
-						<button type="submit" id="_submit" name="_submit" class="btn btn-primary">{{ 'security.login.submit'|trans }}</button>
-					</div>
-			    </div>
-			</form>
+		{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+		    {{ form_widget(form) }}
+		    <div class="form-group">
+				<div class="col-sm-offset-4 col-sm-8 col-xs-12">
+					<button type="submit" id="_submit" name="_submit" class="btn btn-primary">{{ 'security.login.submit'|trans }}</button>
+				</div>
+		    </div>
+		{{ form_end(form) }}
 		</div>
 	</div>
 </div>
