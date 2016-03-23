@@ -9,7 +9,7 @@
  */
 namespace ASF\UserBundle\Tests\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Liip\FunctionalTestBundle\Test\WebTestCase;
 
 /**
  * Ajax Request Controller Tests
@@ -19,6 +19,24 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
  */
 class AjaxRequestControllerTest extends WebTestCase
 {
+	/**
+	 * @var array
+	 */
+	protected $fixtures;
+	
+	/**
+	 * {@inheritDoc}
+	 * @see PHPUnit_Framework_TestCase::setUp()
+	 */
+	public function setUp()
+	{
+		parent::setUp();
+		
+		$this->fixtures = $this->loadFixtureFiles(array(
+			'@ASFUserBundle/DataFixtures/ORM/User.yml'
+		));
+	}
+	
     /**
      * @covers ASF\UserBundle\Controller\AjaxRequestController::byUsernameAction
      */

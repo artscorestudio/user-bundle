@@ -41,3 +41,4 @@
 composer.lock
 
 /Tests/Fixtures/var/*
+Tests/Fixtures/db/

@@ -46,7 +46,7 @@ class AjaxRequestController extends Controller
            'total_count' => count($search),
            'items' => $search
        )));
-       	
+       
        return $response;
    }
 }
