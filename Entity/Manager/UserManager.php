@@ -9,7 +9,7 @@
  */
 namespace ASF\UserBundle\Entity\Manager;
 
-use ASF\CoreBundle\Entity\Manager\ASFEntityManager;
+use ASF\CoreBundle\Utils\Manager\ASFEntityManager;
 
 /**
  * User Entity Manager
