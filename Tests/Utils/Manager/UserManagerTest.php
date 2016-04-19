@@ -7,9 +7,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace ASF\UserBundle\Tests\Entity\Manager;
+namespace ASF\UserBundle\Tests\Utils\Manager;
 
-use ASF\UserBundle\Entity\Manager\UserManager;
+use ASF\UserBundle\Utils\Manager\UserManager;
+
 use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
@@ -22,7 +23,7 @@ use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 class UserManagerTest extends KernelTestCase
 {
     /**
-     * @var \ASF\UserBundle\Entity\Manager\UserManagerInterface
+     * @var \ASF\UserBundle\Utils\Manager\UserManagerInterface
      */
     protected $entityManager;
     
@@ -40,7 +41,7 @@ class UserManagerTest extends KernelTestCase
     }
     
     /**
-     * @covers ASF\UserBundle\Entity\Manager\UserManager
+     * @covers ASF\UserBundle\Utils\Manager\UserManager
      */
     public function testUserManager()
     {
