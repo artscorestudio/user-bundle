@@ -14,9 +14,9 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 use ASF\UserBundle\Form\DataTransformer\StringToUserTransformer;
-use ASF\CoreBundle\Model\Manager\ASFEntityManagerInterface;
+use ASF\CoreBundle\Utils\Manager\UserManagerInterface;
+
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use ASF\UserBundle\Entity\Manager\UserManagerInterface;
 
 /**
  * Field for searching user account
@@ -27,7 +27,7 @@ use ASF\UserBundle\Entity\Manager\UserManagerInterface;
 class SearchUserType extends AbstractType
 {
 	/**
-	 * @var UserManagerInterface|ASFEntityManagerInterface
+	 * @var UserManagerInterface
 	 */
 	protected $userManager;
 	

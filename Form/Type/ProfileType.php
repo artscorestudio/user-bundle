@@ -11,7 +11,8 @@ namespace ASF\UserBundle\Form\Type;
 
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\AbstractType;
-use ASF\UserBundle\Entity\Manager\UserManager;
+
+use ASF\UserBundle\Utils\Manager\UserManager;
 
 /**
  * Profile Form Type

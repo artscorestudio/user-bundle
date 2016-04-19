@@ -10,8 +10,8 @@
 namespace ASF\UserBundle\Form\DataTransformer;
 
 use Symfony\Component\Form\DataTransformerInterface;
-use ASF\CoreBundle\Model\Manager\ASFEntityManagerInterface;
-use ASF\UserBundle\Entity\Manager\UserManagerInterface;
+
+use ASF\UserBundle\Utils\Manager\UserManagerInterface;
 
 /**
  * Transform a string to a User entity
@@ -22,7 +22,7 @@ use ASF\UserBundle\Entity\Manager\UserManagerInterface;
 class StringToUserTransformer implements DataTransformerInterface
 {
 	/**
-	 * @var UserManagerInterface|ASFEntityManagerInterface
+	 * @var UserManagerInterface
 	 */
 	protected $userManager;
 	

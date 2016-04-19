@@ -7,14 +7,14 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace ASF\UserBundle\Entity\Manager;
+namespace ASF\UserBundle\Utils\Manager;
 
-use ASF\CoreBundle\Utils\Manager\ASFEntityManager;
+use ASF\CoreBundle\Utils\Manager\ASFManager;
 
 /**
- * User Entity Manager
+ * User Manager
  * 
  * @author Nicolas Claverie <info@artscore-studio.fr>
  *
  */
-class UserManager extends ASFEntityManager implements UserManagerInterface {}
+class UserManager extends ASFManager implements UserManagerInterface {}

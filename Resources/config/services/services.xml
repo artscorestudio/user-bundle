@@ -7,7 +7,7 @@
 	<parameters>
 		
 		<!-- User Manager -->
-		<parameter key="asf_user.user.manager.class">ASF\UserBundle\Entity\Manager\UserManager</parameter>
+		<parameter key="asf_user.user.manager.class">ASF\UserBundle\Utils\Manager\UserManager</parameter>
 		<parameter key="asf_user.user.manager.entity.class">ASF\UserBundle\Entity\User</parameter>
 		
 		<!-- Forms -->
