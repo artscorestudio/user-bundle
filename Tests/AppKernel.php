@@ -28,7 +28,6 @@ class AppKernel extends Kernel
         	new Hautelook\AliceBundle\HautelookAliceBundle(),
         	new Liip\FunctionalTestBundle\LiipFunctionalTestBundle(),
         	
-            new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             
