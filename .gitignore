@@ -38,6 +38,5 @@
 
 # Composer PHAR
 /composer.phar
-composer.lock
 
 /Tests/Fixtures/var/*
