@@ -1,10 +1,10 @@
 # User Manager Form Types
 
-The UserBundle provides a collection of form types to include in your forms.
+The User Bundle provides a collection of form types to include in your forms.
 
 ## SearchUserFormType
 
-This form type is for search a User entity manage by this bundle. It provides an [EntityType](http://symfony.com/doc/2.8/reference/forms/types/entity.html) but it along with a Twig view for manage autocompletion based on [Select2 jQuery Plugin](https://select2.github.io/). So, if you want to use it, please install select2 in your project or [ASFLayoutBundle](https://github.com/artscorestudio/layout-bundle).
+This form type is for search a User entity manage by this bundle. It provides an [EntityType][1] but it along with a Twig view for manage autocompletion based on [Select2 jQuery Plugin][2]. So, if you want to use it, please install select2 in your project or [ASFLayoutBundle][3].
 
 ```php
 <?php
@@ -24,3 +24,7 @@ class TestFormType extends AbstractType
 	}
 }
 ``` 
+
+[1]: http://symfony.com/doc/2.8/reference/forms/types/entity.html
+[2]: https://select2.github.io/
+[3]: https://github.com/artscorestudio/layout-bundle
