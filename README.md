@@ -14,7 +14,7 @@ User Bundle is a Symfony 2/3 bundle for create and manage user account in Symfon
 
 The bulk of the documentation is stored in the Resources/docs/index.md file in bundle :
 
-[Read the documentation for master](https://github.com/artscorestudio/user-bundle/blob/master/Resources/doc/index.md).
+[Read the documentation for 1.0.0](https://github.com/artscorestudio/user-bundle/blob/1.0.0/Resources/doc/index.md).
 
 
 ## Installation
