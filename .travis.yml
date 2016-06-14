@@ -28,6 +28,9 @@ before_install:
 
 install: composer update --prefer-dist --no-interaction
 
+before_script:
+  - phpenv config-add travis.php.ini
+  
 script:
   - phpunit 
 
