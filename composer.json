@@ -48,10 +48,6 @@
 		"psr-4" : {
 			"ASF\\UserBundle\\" : ""
 		}
-	},
-	"extra": {
-		"branch-alias": {
-			"dev-master": "1.0.x-dev"
-		}
+	}
 	}
 }
