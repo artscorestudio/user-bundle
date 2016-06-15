@@ -34,6 +34,8 @@
         "doctrine/doctrine-bundle": "~1.3",
         "symfony/security-csrf": "~2.8|~3.0",
         "twig/twig": "~1.10",		
+        "artscorestudio/core-bundle": "~1.0",
+        "artscorestudio/layout-bundle": "~1.0"
         "symfony/validator": "~2.3|~3.0",
         "friendsofsymfony/jsrouting-bundle": ">=2.0",
         "symfony/assetic-bundle": "^2.7",

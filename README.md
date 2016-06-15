@@ -6,7 +6,7 @@ User Bundle is a Symfony 2/3 bundle for create and manage user account in Symfon
 
 > IMPORTANT NOTICE: This bundle is still under development. Any changes will be done without prior notice to consumers of this package. Of course this code will become stable at a certain point, but for now, use at your own risk.
 
-| [Master](https://github.com/artscorestudio/user-bundle) | [Latest Release (1.0.0)](https://github.com/artscorestudio/user-bundle/releases/tag/1.0.0) |
+| [Master](https://github.com/artscorestudio/user-bundle) | [Latest Release (~1.0)](https://travis-ci.org/artscorestudio/user-bundle.svg?branch=1.0.0) |
 | ------ | -------------- |
 | [![Build Status](https://travis-ci.org/artscorestudio/user-bundle.svg?branch=master)](https://travis-ci.org/artscorestudio/user-bundle) | [![Build Status](https://travis-ci.org/artscorestudio/user-bundle.svg?branch=1.0.0)](https://travis-ci.org/artscorestudio/user-bundle) |
 
@@ -14,7 +14,7 @@ User Bundle is a Symfony 2/3 bundle for create and manage user account in Symfon
 
 The bulk of the documentation is stored in the Resources/docs/index.md file in bundle :
 
-[Read the documentation for master](https://github.com/artscorestudio/user-bundle/blob/master/Resources/doc/index.md).
+[Read the documentation for 1.0.0](https://github.com/artscorestudio/user-bundle/blob/1.0.0/Resources/doc/index.md).
 
 
 ## Installation

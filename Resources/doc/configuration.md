@@ -4,5 +4,5 @@
 
 ```yaml
 asf_user:
-
+    form_theme: ASFUserBundle:Form:fields.html.twig
 ```
