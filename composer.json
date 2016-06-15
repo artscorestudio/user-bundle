@@ -45,9 +45,11 @@
         "hautelook/alice-bundle": "^1.2"
 	},
 	"autoload" : {
-		"psr-4" : {
-			"ASF\\UserBundle\\" : ""
-		}
-	}
-	}
+        "psr-4" : {
+            "ASF\\UserBundle\\" : ""
+        }
+    }
+    "branch-alias" : {
+        "dev-master" : "1.0.x-dev"
+    }
 }
