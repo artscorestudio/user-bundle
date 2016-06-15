@@ -31,7 +31,7 @@ For more information about translations, check [Symfony documentation][4].
 Require the bundle with composer :
 
 ```bash
-$ composer require artscorestudio/user-bundle "~1.0"
+$ composer require artscorestudio/user-bundle "dev-master"
 ```
 
 Composer will install the bundle to your project's *vendor/artscorestudio/user-bundle* directory. It also install dependencies. 
